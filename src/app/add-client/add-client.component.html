@@ -1,0 +1,84 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome  </h3>
+                        <h3>to</h3>
+                        <h4>Open Brewery DB</h4>
+                    </div>
+                    <div class="col-md-9 register-right">
+                        <div class="tab-content" id="myTabContent">
+                            <form  #clientForm = "ngForm" (ngSubmit) = "insert(clientForm.value)">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 *ngIf = "!
+                                update" class="register-heading">Add New client</h3>
+                                <h3 *ngIf = "update" class="register-heading">Update Client Data</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="name"  [(ngModel)] = "client.name" #name = "ngModel" placeholder="Name *" required value="" />
+                                            <span *ngIf = "name.invalid && name.touched" style="color:red"> Please at least Enter </span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="brewery_type"  [(ngModel)] = "client.brewery_type" #type = "ngModel" required placeholder="Brewery Type *" value="" />
+                                            <span *ngIf = "type.invalid && type.touched" style="color:red"> Please at least Enter </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="street"  [(ngModel)] = "client.street" #street = "ngModel" placeholder="Street *" required value="" />
+                                            <span *ngIf = "street.invalid && street.touched" style="color:red"> Please at least Enter </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="state"  [(ngModel)] = "client.state" #state = "ngModel" placeholder="State *" required value="" />
+                                            <span *ngIf = "state.invalid && state.touched" style="color:red"> Please at least Enter </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="number" class="form-control" name="longitude"  pattern="(-?\d+(\.\d+)?)$" [(ngModel)] = "client.longitude"  #longitude = "ngModel" placeholder="Longitude *" required value="" />
+                                            <span *ngIf = "longitude.invalid && longitude.touched" style="color:red"> Enter valid Longitude </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="postal_code"  [(ngModel)] = "client.postal_code" #postal = "ngModel"  placeholder="Postal Code *" required value="" />
+                                            <span *ngIf = "postal.invalid && postal.touched" style="color:red"> Enter valid Postal Code </span>
+                                            
+                                        </div>                                        
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <input type="text" minlength="10" maxlength="10" name="phone"  [(ngModel)] = "client.phone" #phone = "ngModel" class="form-control"  #longitude = "ngModel" placeholder="Your Phone *" required value="" />
+                                            <span *ngIf = "phone.invalid && phone.touched" style="color:red"> Enter valid 10 digit number </span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="city"  [(ngModel)] = "client.city" #city = "ngModel" placeholder="City *" required value="" />
+                                            <span *ngIf = "city.invalid && city.touched" style="color:red"> Please at least Enter </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="country"  [(ngModel)] = "client.country" #country = "ngModel" placeholder="Country *" required value="" />
+                                            <span *ngIf = "country.invalid && country.touched" style="color:red"> Please at least Enter </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="number" class="form-control" name="latitude"  [(ngModel)] = "client.latitude" #latitude = "ngModel" placeholder="Latitude *" required value="" />
+                                            <span *ngIf = "latitude.invalid && latitude.touched" pattern="^(-?\d+(\.\d+)?)" style="color:red"> Enter valid latitude </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="website" #website = "ngModel" pattern="(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})" [(ngModel)] = "client.website_url" placeholder="Website *" required value="" />
+                                            <span *ngIf = "website.invalid && website.touched" style="color:red"> Enter valid URL </span>
+                                        </div>
+                                        <input type="submit" *ngIf = "!update" class="btn btn-primary btnRegister"  [disabled] = "clientForm.invalid"  value="Add"/>
+                                        <input type="submit" *ngIf = "update" class="btn btn-primary btnRegister"  [disabled] = "clientForm.invalid"  value="Update"/>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                         </div>
+                     </div>
+                </div>
+    </div>
+
+           

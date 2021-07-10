@@ -1,0 +1,22 @@
+
+<div class="text-center">
+    <h1>Our Clients</h1>
+</div>
+
+<div class=" ">
+ <div class="row" style="padding-left: 5rem;"> 
+<div class="card" style="width: 20rem; height: 15rem; margin:1rem;" *ngFor="let client of Clients; index as i">
+
+  <!-- <iframe class="card-img-top" style=" height: 20rem" (load)=setCordinateOf(i)  [src] = "sanitizer.bypassSecurityTrustResourceUrl(URL)" ></iframe> -->
+  <div class="card-body" style="background-color: #F6EEC4 ;">
+    <h5 class="card-title">{{client.name}}</h5>
+    <p class="card-text">{{client.street}}</p>
+    <p class="card-text">{{client.city}} , {{client.state}}.</p>
+    <button class="btn btn-primary"  (click) = 'viewData(client.id)' >View More</button>
+  </div>
+</div>
+</div>
+</div>
+
+
+  
